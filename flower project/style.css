@@ -1,0 +1,578 @@
+/* ===================================================
+   FLOWER BOUTIQUE — style.css
+   =================================================== */
+
+/* ===== VARIABLES ===== */
+:root {:root {
+    --pink:        #f2a8c4;   /* rose pastel boutons */
+    --pink-deep:   #d4748f;   /* rose hover */
+    --pink-blush:  #fceef5;   /* sections rose très clair */
+    --cream:       #fdf8f4;   /* background général beige crème */
+    --cream-dark:  #f7ede3;   /* sections alternées */
+    --brown-soft:  #9c7878;   /* texte secondaire */
+    --dark:        #3d2c2c;   /* titres */
+    --white:       #fffcfa;   /* cards et header */
+}}
+    --pink:        #f4a7c0;   /* rose pastel principal */
+    --pink-deep:   #e07fa0;   /* rose foncé pour hover */
+    --pink-blush:  #fde8f0;   /* rose très clair background */
+    --cream:       #fdf6f0;   /* crème chaud — remplace blanc froid */
+    --cream-dark:  #f5ede3;   /* crème légèrement plus foncé */
+    --brown-soft:  #8b6f6f;   /* brun rosé pour texte secondaire */
+    --dark:        #3d2c2c;   /* brun foncé — remplace noir dur */
+    --white:       #fffaf8;   /* blanc cassé crème */
+    --shadow:      0 0.5rem 2.5rem rgba(180,100,120,0.12);
+    --shadow-hover:0 1.5rem 4rem rgba(180,100,120,0.22);
+
+
+/* ===== RESET ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    outline: none;
+    border: none;
+    text-decoration: none;
+    transition: all 0.3s ease;
+}
+
+html {
+    font-size: 62.5%;
+    scroll-behavior: smooth;
+    scroll-padding-top: 7rem;
+    overflow-x: hidden;
+}
+
+body {
+    font-family: 'Lora', serif;
+    background: var(--cream);
+    color: var(--dark);
+}
+
+section {
+    padding: 7rem 9%;
+}
+
+/* ===== HEADING ===== */
+.heading {
+    text-align: center;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 5rem;
+    font-weight: 600;
+    color: var(--dark);
+    margin-bottom: 5rem;
+    letter-spacing: 0.02em;
+}
+
+.heading span {
+    color: var(--pink-deep);
+    font-style: italic;
+}
+
+.heading::after {
+    content: '🎀';
+    display: block;
+    font-size: 2rem;
+    margin: 1rem auto 0;
+    letter-spacing: 0;
+}
+
+/* ===== BUTTON ===== */
+.btn {
+    display: inline-block;
+    margin-top: 2rem;
+    border-radius: 5rem;
+    background: var(--pink);
+    color: var(--white);
+    padding: 1.1rem 3.5rem;
+    cursor: pointer;
+    font-size: 1.5rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    letter-spacing: 0.08em;
+    border: 0.2rem solid var(--pink);
+}
+
+.btn:hover {
+    background: transparent;
+    color: var(--pink-deep);
+    border-color: var(--pink-deep);
+    transform: translateY(-2px);
+    box-shadow: 0 0.8rem 2rem rgba(224,127,160,0.25);
+}
+/* ===================================================
+   HEADER
+   =================================================== */
+header {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    background: rgba(253,246,240,0.96);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    padding: 1.8rem 9%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 1000;
+    box-shadow: 0 0.2rem 2rem rgba(180,100,120,0.08);
+    border-bottom: 0.1rem solid rgba(244,167,192,0.3);
+}
+
+header .logo {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 3.2rem;
+    color: var(--dark);
+    font-weight: 700;
+    font-style: italic;
+    letter-spacing: 0.05em;
+}
+
+header .logo span {
+    color: var(--pink-deep);
+}
+header .navbar a {
+    font-family: 'Lora', serif;
+    font-size: 1.5rem;
+    padding: 0 1.5rem;
+    color: var(--brown-soft);
+    font-weight: 400;
+    letter-spacing: 0.05em;
+}
+
+header .navbar a:hover {
+    color: var(--pink-deep);
+}
+ 
+header .icons a {
+    font-size: 1.9rem;
+    color: var(--brown-soft);
+    margin-left: 1.8rem;
+}
+ 
+header .icons a:hover {
+    color: var(--pink-deep);
+}
+
+header #toggler {
+    display: none;
+}
+
+ 
+header .fa-bars {
+    font-size: 2.5rem;
+    color: var(--brown-soft);
+    cursor: pointer;
+    display: none;
+}  display: none;
+
+
+/* ===================================================
+   HOME SECTION
+   =================================================== */
+.home {
+    display: flex;
+    align-items: center;
+    min-height: 100vh;
+    background: url(image/firstpage.jpg) center/cover no-repeat;
+    position: relative;
+}
+
+/* overlay pour lisibilité du texte */
+.home::before {   content: '';
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+        to right,
+        rgba(253,246,240,0.78) 40%,
+        rgba(253,246,240,0.15) 100%
+    );}
+ 
+.home .content {
+    max-width: 55rem;
+    position: relative;
+    z-index: 1;
+}
+ 
+.home .content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 7.5rem;
+    color: var(--dark);
+    line-height: 1.1;
+    font-style: italic;
+    font-weight: 600;
+}
+ 
+.home .content span {
+    display: block;
+    font-size: 2.2rem;
+    color: var(--pink-deep);
+    padding: 1.2rem 0;
+    font-family: 'Lora', serif;
+    font-style: italic;
+    letter-spacing: 0.05em;
+}
+ 
+.home .content p {
+    font-size: 1.6rem;
+    color: var(--brown-soft);
+    line-height: 1.9;
+    max-width: 45rem;
+    font-family: 'Lora', serif;
+}
+
+/* ===================================================
+   ABOUT SECTION
+   =================================================== */
+.about {
+    background: var(--pink-blush);
+}
+ 
+.about .row {
+    display: flex;
+    align-items: center;
+    gap: 5rem;
+    flex-wrap: wrap;
+}
+ 
+.about .video-container {
+    flex: 1;
+    min-width: 28rem;
+    position: relative;
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    border: 0.3rem solid rgba(244,167,192,0.4);
+}
+.about .video-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.about .video-container img {
+    max-width: 100%;
+    max-height: 40rem;
+    object-fit: cover;
+    border-radius: 1.5rem;
+}
+ 
+.about .video-container h3 {
+    position: absolute;
+    bottom: 2rem;
+    left: 2rem;
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-style: italic;
+    color: var(--white);
+    background: rgba(224,127,160,0.88);
+    padding: 0.8rem 2rem;
+    border-radius: 5rem;
+}
+ 
+.about .content {
+    flex: 1;
+    min-width: 28rem;
+}
+ 
+.about .content h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 4rem;
+    color: var(--dark);
+    margin-bottom: 2rem;
+    font-style: italic;
+    font-weight: 600;
+}
+ 
+.about .content p {  font-size: 1.6rem;
+    color: var(--brown-soft);
+    line-height: 1.9;
+    margin-bottom: 1.5rem;}
+  
+
+
+/* ===================================================
+   PRODUCTS SECTION
+   =================================================== */
+.products {
+    background: var(--cream);
+}
+ 
+.products-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 3rem;
+}
+ 
+.product-card {
+    border-radius: 2rem;
+    overflow: hidden;
+    box-shadow: var(--shadow);
+    background: var(--white);
+    border: 0.15rem solid rgba(244,167,192,0.25);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+ 
+.product-card:hover {
+    transform: translateY(-0.8rem);
+    box-shadow: var(--shadow-hover);
+}
+ 
+.product-card .img-box {
+    width: 100%;
+    height: 30rem;
+    overflow: hidden;
+}
+ 
+.product-card .img-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    display: block;
+    transition: transform 0.5s ease;
+}
+ 
+.product-card:hover .img-box img {
+    transform: scale(1.07);
+}
+ 
+.product-card .info {
+    padding: 2.5rem;
+    background: var(--white);
+}
+ 
+.product-card .info h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.4rem;
+    color: var(--dark);
+    margin-bottom: 0.5rem;
+    font-style: italic;
+}
+ 
+.product-card .info .price {
+    font-size: 2rem;
+    color: var(--pink-deep);
+    font-weight: 600;
+    margin-bottom: 0.8rem;
+    font-family: 'Cormorant Garamond', serif;
+}
+ 
+.product-card .info .stars {
+    color: #e8a0b4;
+    font-size: 1.5rem;
+    margin-bottom: 1.5rem;
+}
+ 
+.product-card .info .btn {
+    margin-top: 0;
+    font-size: 1.5rem;
+    padding: 0.9rem 2.5rem;
+    width: 100%;
+    text-align: center;
+    display: block;
+}
+ 
+/* ===================================================
+   REVIEW SECTION
+   =================================================== */
+.review {
+    background: var(--cream-dark);
+}
+ 
+.reviews-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(28rem, 1fr));
+    gap: 3rem;
+}
+ 
+.review-card {
+    background: var(--white);
+    padding: 3rem;
+    border-radius: 2rem;
+    box-shadow: var(--shadow);
+    position: relative;
+    border: 0.15rem solid rgba(244,167,192,0.2);
+}
+ 
+.review-card::before {
+    content: '\201C';
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 12rem;
+    color: var(--pink);
+    opacity: 0.2;
+    position: absolute;
+    top: -2rem;
+    left: 2rem;
+    line-height: 1;
+}
+ 
+.review-card p {
+    font-family: 'Lora', serif;
+    font-size: 1.6rem;
+    color: var(--brown-soft);
+    line-height: 1.9;
+    margin-bottom: 2rem;
+    position: relative;
+    z-index: 1;
+    font-style: italic;
+}
+ 
+.review-card .reviewer {
+    display: flex;
+    align-items: center;
+    gap: 1.5rem;
+}
+ 
+.review-card .reviewer .avatar {
+    width: 5.5rem;
+    height: 5.5rem;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 0.3rem solid var(--pink);
+    flex-shrink: 0;
+}
+ 
+.review-card .reviewer .avatar img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+}
+ 
+.review-card .reviewer .name {
+    font-family: 'Cormorant Garamond', serif;
+    font-weight: 600;
+    font-size: 1.8rem;
+    color: var(--dark);
+    font-style: italic;
+}
+ 
+.review-card .reviewer .stars {
+    color: #e8a0b4;
+    font-size: 1.3rem;
+}
+ 
+/* ===================================================
+   CONTACT SECTION
+   =================================================== */
+.contact {
+    background: var(--pink-blush);
+}
+ 
+.contact-form {
+    max-width: 70rem;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+}
+ 
+.contact-form .full {
+    grid-column: 1 / -1;
+}
+ 
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 1.5rem 2rem;
+    font-size: 1.6rem;
+    font-family: 'Lora', serif;
+    border: 0.15rem solid rgba(244,167,192,0.5);
+    border-radius: 1rem;
+    color: var(--dark);
+    background: var(--white);
+}
+ 
+.contact-form input::placeholder,
+.contact-form textarea::placeholder {
+    color: #c9a8b8;
+    font-style: italic;
+}
+ 
+.contact-form input:focus,
+.contact-form textarea:focus {
+    border-color: var(--pink-deep);
+    box-shadow: 0 0 0 0.3rem rgba(244,167,192,0.2);
+}
+ 
+.contact-form textarea {
+    resize: vertical;
+    min-height: 15rem;
+}
+ 
+.contact-form .btn {
+    margin-top: 0;
+    width: 100%;
+    text-align: center;
+    font-size: 1.7rem;
+    display: block;
+}
+ 
+/* ===================================================
+   FOOTER
+   =================================================== */
+footer {
+    background: var(--dark);
+    color: rgba(253,246,240,0.6);
+    text-align: center;
+    padding: 2.5rem 9%;
+    font-size: 1.5rem;
+    font-family: 'Lora', serif;
+}
+ 
+footer span {
+    color: var(--pink);
+}
+ 
+/* ===================================================
+   MEDIA QUERIES
+   =================================================== */
+@media (max-width: 991px) {
+    html { font-size: 55%; }
+    header { padding: 1.5rem 3%; }
+    section { padding: 5rem 4%; }
+    .home { background-position: right center; }
+}
+ 
+@media (max-width: 768px) {
+    header .fa-bars { display: block; }
+ 
+    header .navbar {
+        position: absolute;
+        top: 100%; left: 0; right: 0;
+        background: var(--cream);
+        border-top: 0.1rem solid rgba(244,167,192,0.3);
+        box-shadow: 0 1rem 2rem rgba(180,100,120,0.1);
+        clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        transition: clip-path 0.4s ease;
+        display: flex;
+        flex-direction: column;
+    }
+ 
+    header #toggler:checked ~ .navbar {
+        clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+    }
+ 
+    header .navbar a {
+        margin: 1rem 2rem;
+        padding: 1.2rem 2rem;
+        background: var(--pink-blush);
+        border-radius: 1rem;
+        display: block;
+        font-size: 1.8rem;
+        border: 0.1rem solid rgba(244,167,192,0.3);
+    }
+ 
+    .home .content h3 { font-size: 5rem; }
+    .home .content span { font-size: 2rem; }
+ 
+    .contact-form { grid-template-columns: 1fr; }
+    .contact-form .full { grid-column: 1; }
+}
+ 
+@media (max-width: 450px) {
+    html { font-size: 50%; }
+    .home .content h3 { font-size: 4rem; }
+}
+ 
